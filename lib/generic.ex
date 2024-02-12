@@ -18,6 +18,7 @@ defmodule Generic do
 
   def run(fitness_function, genotype, max_fitness, opts \\ []) do
     population = initialize(genotype)
+
     population
     |> evolve(fitness_function, genotype, max_fitness, opts)
   end
@@ -44,8 +45,8 @@ defmodule Generic do
   end
 
   def evaluate(population, fitness_function) do
-      population
-      |> Enum.sort_by(fitness_function, :desc)
+    population
+    |> Enum.sort_by(fitness_function, :desc)
   end
 
   def select(population, _opts \\ []) do
@@ -56,7 +57,8 @@ defmodule Generic do
 
   def crossover(population, _opts \\ []) do
     population
-    |> Enum.reduce([],
+    |> Enum.reduce(
+      [],
       fn {p1, p2}, acc ->
         cx_point = :rand.uniform(length(p1))
         {h1, t1} = Enum.split(p1, cx_point)
@@ -69,15 +71,12 @@ defmodule Generic do
 
   def mutation(population, _opts \\ []) do
     population
-    |> Enum.map(
-      fn chromosome ->
-        if :rand.uniform() < 0.05 do
-          Enum.shuffle(chromosome)
-        else
-          chromosome
-        end
+    |> Enum.map(fn chromosome ->
+      if :rand.uniform() < 0.05 do
+        Enum.shuffle(chromosome)
+      else
+        chromosome
       end
-    )
+    end)
   end
-
 end
