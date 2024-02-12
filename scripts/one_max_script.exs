@@ -62,5 +62,5 @@ end
 
 
 solution = algorithm.(population, algorithm)
-IO.puts("\n[#{DateTime.utc_now()}]Answer:\n")
+IO.puts("\n[#{DateTime.utc_now()}]Answer:")
 IO.inspect(solution)
