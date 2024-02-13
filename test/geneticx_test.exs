@@ -1,8 +1,8 @@
 defmodule GeneticTest do
   use ExUnit.Case
-  doctest Genetic
+  doctest Geneticx
 
   test "greets the world" do
-    assert Genetic.hello() == :world
+    assert Geneticx.hello() == :world
   end
 end

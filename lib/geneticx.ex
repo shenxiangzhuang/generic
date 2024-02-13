@@ -1,6 +1,6 @@
-defmodule Genetic do
+defmodule Geneticx do
   @moduledoc """
-  Documentation for `Genetic`.
+  Documentation for `Geneticx`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule Genetic do
 
   ## Examples
 
-      iex> Genetic.hello()
+      iex> Geneticx.hello()
       :world
 
   """
