@@ -16,6 +16,9 @@ defmodule Geneticx do
     :world
   end
 
+  @doc """
+  Run the genetic algorithm
+  """
   def run(fitness_function, genotype, max_fitness, opts \\ []) do
     population = initialize(genotype)
 
@@ -23,6 +26,9 @@ defmodule Geneticx do
     |> evolve(fitness_function, genotype, max_fitness, opts)
   end
 
+  @doc """
+  The core algorithm
+  """
   def evolve(population, fitness_function, genotype, max_fitness, opts \\ []) do
     population = evaluate(population, fitness_function)
     best = hd(population)
@@ -39,22 +45,34 @@ defmodule Geneticx do
     end
   end
 
+  @doc """
+  Initialize the population with genotype
+  """
   def initialize(genotype, opts \\ []) do
     population_size = Keyword.get(opts, :population_size, 100)
     for _ <- 1..population_size, do: genotype.()
   end
 
+  @doc """
+  Evaluate the population with the fitness function
+  """
   def evaluate(population, fitness_function) do
     population
     |> Enum.sort_by(fitness_function, :desc)
   end
 
+  @doc """
+  Select the parents for the next generation
+  """
   def select(population, _opts \\ []) do
     population
     |> Enum.chunk_every(2)
     |> Enum.map(&List.to_tuple(&1))
   end
 
+  @doc """
+  Crossover to generate the children
+  """
   def crossover(population, _opts \\ []) do
     population
     |> Enum.reduce(
@@ -69,6 +87,9 @@ defmodule Geneticx do
     )
   end
 
+  @doc """
+  Mutate the children randomly
+  """
   def mutation(population, _opts \\ []) do
     population
     |> Enum.map(fn chromosome ->
