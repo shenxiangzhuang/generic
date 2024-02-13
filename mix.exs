@@ -37,7 +37,7 @@ defmodule Geneticx.MixProject do
 
   defp docs do
     [
-      main: "Geneticx", # The main page in the docs
+      main: "readme", # The main page in the docs
       extras: ["README.md"]
     ]
   end
