@@ -38,6 +38,8 @@ defmodule Geneticx.MixProject do
   defp docs do
     [
       main: "readme", # The main page in the docs
+      source_ref: "v#{@version}",
+      source_url: "https://github.com/shenxiangzhuang/geneticx",
       extras: ["README.md"]
     ]
   end
