@@ -8,7 +8,7 @@ defmodule Hello do
 
   ## Examples
 
-    iex> Geneticx.hello()
+    iex> Hello.hello()
     :world
   """
   def hello do
