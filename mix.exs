@@ -8,15 +8,12 @@ defmodule Geneticx.MixProject do
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      docs: docs(),
+      package: package(),
 
-      # Docs
       name: "Genetic algorithms",
       source_url: "https://github.com/shenxiangzhuang/geneticx",
       homepage_url: "https://github.com/shenxiangzhuang/geneticx",
-      docs: [
-        main: "Geneticx", # The main page in the docs
-        extras: ["README.md"]
-      ]
     ]
   end
 
@@ -34,5 +31,20 @@ defmodule Geneticx.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
+  end
+
+  defp docs do
+    [
+      main: "Geneticx", # The main page in the docs
+      extras: ["README.md"]
+    ]
+  end
+
+  defp package do
+    %{
+      licenses: ["MIT"],
+      maintainers: ["Xiangzhuang Shen"],
+      links: %{"GitHub" => "https://github.com/shenxiangzhuang/geneticx"}
+    }
   end
 end
