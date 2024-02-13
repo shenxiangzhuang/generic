@@ -1,7 +1,7 @@
 defmodule Geneticx.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.1.1"
   @description "Generic Algorithms for fun"
 
   def project do
