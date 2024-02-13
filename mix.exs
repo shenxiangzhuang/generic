@@ -1,19 +1,21 @@
 defmodule Geneticx.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+  @description "Generic Algorithms for fun"
+
   def project do
     [
       app: :geneticx,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.15",
+      name: "Generticx",
+      description: @description,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       docs: docs(),
       package: package(),
 
-      name: "Genetic algorithms",
-      source_url: "https://github.com/shenxiangzhuang/geneticx",
-      homepage_url: "https://github.com/shenxiangzhuang/geneticx",
     ]
   end
 
