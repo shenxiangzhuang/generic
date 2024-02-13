@@ -1,8 +1,32 @@
-fitness_function = fn chromosome -> Enum.sum(chromosome) end
-genotype = fn -> for  _ <- 1..1000, do: Enum.random(0..1) end
-max_fitness = 1000
+defmodule OneMax do
+  alias Types.Chromosome
+  @behaviour Problem
+
+  @string_size 42
+
+  @impl Problem
+  def genotype() do
+    genes = for _ <- 1..@string_size, do: Enum.random(0..1)
+    %Chromosome{
+      genes: genes,
+      size: @string_size
+    }
+  end
+
+  @impl Problem
+  def fitness_function(chromosome) do
+    Enum.sum(chromosome.genes)
+  end
+
+  @impl Problem
+  def terminate?([best | _]) do
+    best.fitness == @string_size
+  end
+
+end
 
 
-solution = Geneticx.run(fitness_function, genotype, max_fitness)
+
+solution = Geneticx.run(OneMax)
 IO.puts("\n[#{DateTime.utc_now()}]Answer:")
 IO.inspect(solution)
