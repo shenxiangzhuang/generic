@@ -4,6 +4,8 @@ defmodule Geneticx do
   """
   alias Types.Chromosome
 
+  @population_size 200
+
   @doc """
   Run the genetic algorithm
   """
@@ -37,7 +39,7 @@ defmodule Geneticx do
   Initialize the population with genotype
   """
   def initialize(genotype, opts \\ []) do
-    population_size = Keyword.get(opts, :population_size, 100)
+    population_size = Keyword.get(opts, :population_size, @population_size)
     for _ <- 1..population_size, do: genotype.()
   end
 
