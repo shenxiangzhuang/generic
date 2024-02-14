@@ -7,13 +7,13 @@ defmodule OneMax do
 
   @string_size 42
 
-
   @doc """
   Genotype of onemax problem
   """
   @impl Problem
   def genotype() do
     genes = for _ <- 1..@string_size, do: Enum.random(0..1)
+
     %Chromosome{
       genes: genes,
       size: @string_size
@@ -58,5 +58,4 @@ defmodule OneMax do
   def terminate?([best | _]) do
     best.fitness == @string_size
   end
-
 end

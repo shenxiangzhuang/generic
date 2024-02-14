@@ -7,8 +7,9 @@ defmodule Speller do
 
   @impl Problem
   def genotype() do
-    genes = Stream.repeatedly(fn -> Enum.random(?a..?z) end)
-    |> Enum.take(@string_size)
+    genes =
+      Stream.repeatedly(fn -> Enum.random(?a..?z) end)
+      |> Enum.take(@string_size)
 
     %Chromosome{
       genes: genes,
@@ -26,11 +27,4 @@ defmodule Speller do
   def terminate?([best | _]) do
     best.fitness >= 0.99
   end
-
 end
-
-
-
-solution = Geneticx.run(Speller)
-IO.puts("\n[#{DateTime.utc_now()}]Answer:")
-IO.inspect(solution)

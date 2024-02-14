@@ -1,12 +1,12 @@
 # algorithm
-one_max_run:
-	mix run scripts/one_max.exs
+run_onemax:
+	mix run -e "Geneticx.run(OneMax)"
 
-speller_run:
-	mix run scripts/speller.exs
+run_speller:
+	mix run -e "Geneticx.run(Speller)"
 
-cargo_run:
-	mix run scripts/cargo.exs
+run_cargo:
+	mix run -e "Geneticx.run(Cargo)"
 
 
 # docs
