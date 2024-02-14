@@ -26,7 +26,4 @@ defmodule OneMax do
 end
 
 
-
-solution = Geneticx.run(OneMax)
-IO.puts("\n[#{DateTime.utc_now()}]Answer:")
-IO.inspect(solution)
+Geneticx.run(OneMax)

@@ -22,9 +22,12 @@ defmodule Geneticx do
   def evolve(population, problem, opts \\ []) do
     population = evaluate(population, &problem.fitness_function/1, opts)
     best = hd(population)
-    IO.write("\r[#{DateTime.utc_now()}]Current Best: #{best.fitness}")
+    utc_now = DateTime.utc_now()
+    IO.write("\r[#{utc_now}]Current Best: #{best.fitness}")
 
     if problem.terminate?(population) do
+      IO.puts("\n[#{utc_now}]Answer:")
+      IO.inspect(best)
       best
     else
       population

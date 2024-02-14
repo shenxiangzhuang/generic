@@ -8,6 +8,10 @@ one_max_lib_run:
 speller_run:
 	mix run scripts/speller.exs
 
+cargo_run:
+	mix run scripts/cargo.exs
+
+
 # docs
 doc_build:
 	mix docs
