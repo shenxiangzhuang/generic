@@ -1,12 +1,13 @@
 # algorithm
-one_max_script_run:
-	elixir scripts/one_max_script.exs
+run_onemax:
+	mix run -e "Geneticx.run(OneMax)"
 
-one_max_lib_run:
-	mix run scripts/one_max_lib.exs
+run_speller:
+	mix run -e "Geneticx.run(Speller)"
 
-speller_run:
-	mix run scripts/speller.exs
+run_cargo:
+	mix run -e "Geneticx.run(Cargo)"
+
 
 # docs
 doc_build:
